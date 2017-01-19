@@ -1,0 +1,18 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.html",
+  "fragments": [
+    "src/devnet-login.html",
+    "src/devnet-main.html",
+    "src/devnet-profile.html"
+  ],
+  "sourceGlobs": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "includeDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/webcomponents.min.js"
+  ]
+}
