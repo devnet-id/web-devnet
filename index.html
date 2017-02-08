@@ -12,10 +12,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="generator" content="Polymer Starter Kit">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preload" href="//fonts.googleapis.com/css?family=Roboto:300,400" as="style">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,400">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>My App</title>
+    <title>S{}LVE</title>
     <meta name="description" content="My App description">
 
     <link rel="icon" href="/images/favicon.ico">
@@ -94,20 +96,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     //   }
     </script>
 
-    <link rel="import" href="/src/devnet-login.html">
-
+    <link rel="import" href="/src/devnet-main.html">
     <style>
-      body {
+    body {
+        background: #eceff1;
+        font: 16px/1.15 'Roboto', sans-serif;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
         margin: 0;
-        font-family: 'Roboto', 'Noto', sans-serif;
-        line-height: 1.5;
-        min-height: 100vh;
-        background-color: #eeeeee;
-      }
+    }
     </style>
+
   </head>
   <body>
-    <devnet-login></devnet-login>
+    <devnet-main></devnet-main>
     <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>
