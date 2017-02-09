@@ -1,47 +1,89 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
-<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
 <link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
-<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
-<link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="my-icons.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="devnet-main">
   <template>
     <style include="shared-styles"></style>
-    <style include="app-grid-style">
-:host {
-  --app-grid-columns: 1;
-}
-    </style>
-    <app-header-layout>
-      <app-header condenses reveals effects="waterfall">
-        <div class="navbar">
-          <div class="container">
-            <a href="/" class="brand"><img src="../images/devnet-logo.png" alt="S{}LVE.ID"></a> <a href="/profile" class="btn">Sign in / Sign up</a>
-            <form class="navbar-search" action="">
-              <input type="text"> </form>
+    <app-location route="{{route}}"></app-location>
+    <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
+    <app-drawer-layout fullbleed force-narrow>
+      <!-- Drawer content -->
+      <app-drawer id="drawer">
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="profile" href="/profile">Profile</a>
+        </iron-selector>
+      </app-drawer>
+      <!-- Main content -->
+      <app-header-layout has-scrolling-region>
+        <app-header condenses reveals effects="waterfall">
+          <div class="navbar">
+            <div class="container">
+              <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
+              <a href="/" class="brand"><img src="../images/devnet-logo.png" alt="S{}LVE.ID"></a> <a href="/profile" class="btn">Sign in / Sign up</a>
+              <form class="navbar-search" action="">
+                <input type="text"> </form>
+            </div>
           </div>
-        </div>
-        <div class="tagbar">
-          <div class="container"> <span class="label">For you</span> <a href="/">Editor's Pick</a> <a href="/">Google Developer ID</a> <a href="/">Frontend Future 2017</a> <a href="/">NodeJS</a> <a href="/">React Native</a>
-            <a href="/">
-              <svg class="icon" viewBox="0 0 24 24">
-                <path fill="#3f51b5" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                <path fill="#fff" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /> </svg>
-            </a>
+          <div class="tagbar">
+            <div class="container"> <span class="label">For you</span> <a href="/">Editor's Pick</a> <a href="/">Google Developer ID</a> <a href="/">Frontend Future 2017</a> <a href="/">NodeJS</a> <a href="/">React Native</a>
+              <a href="/">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path fill="#3f51b5" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                  <path fill="#fff" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /> </svg>
+              </a>
+            </div>
           </div>
-        </div>
-      </app-header>
-      <div class="app-grid" has-aspect-ratio>
-        <div> </div>
-      </div>
-    </app-header-layout>
+        </app-header>
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
+          <devnet-profile name="profile"></devnet-profile>
+          <my-view404 name="view404"></my-view404>
+        </iron-pages>
+      </app-header-layout>
+    </app-drawer-layout>
   </template>
   <script>
 Polymer({
   is: 'devnet-main',
+
+  properties: {
+    page: {
+      type: String,
+      reflectToAttribute: true,
+      observer: '_pageChanged',
+    },
+  },
+
+  observers: [
+    '_routePageChanged(routeData.page)',
+  ],
+
+  _routePageChanged: function(page) {
+    this.page = page || 'view1';
+
+    if (!this.$.drawer.persistent) {
+      this.$.drawer.close();
+    }
+  },
+
+  _pageChanged: function(page) {
+    // Load page import on demand. Show 404 page if fails
+    var resolvedPageUrl = this.resolveUrl('devnet-' + page + '.html');
+    this.importHref(resolvedPageUrl, null, this._showPage404, true);
+  },
+
+  _showPage404: function() {
+    this.page = 'view404';
+  },
 });
   </script>
 </dom-module>

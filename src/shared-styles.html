@@ -558,7 +558,36 @@ template {
 
 .navbar {
   background: #3f51b5;
-  min-height: 4em;
+  min-height: 5.2em;
+}
+
+.navbar .btn {
+  display: none;
+}
+
+.drawer-list {
+  margin: 0 20px;
+}
+
+.drawer-list a {
+  display: block;
+  padding: 0 16px;
+  text-decoration: none;
+  color: var(--app-secondary-color);
+  line-height: 40px;
+}
+
+.drawer-list a.iron-selected {
+  color: black;
+  font-weight: bold;
+}
+
+paper-icon-button {
+  color: white;
+  float: left;
+  height: 60px;
+  width: 60px;
+  margin: -.2em 3em 0 0;
 }
 
 .brand {
@@ -633,11 +662,8 @@ template {
     font-size: 2em;
     float: left;
   }
-  .navbar-search {
+  .navbar .btn {
     display: block;
-    margin: .5em auto;
-    vertical-align: top;
-    width: 45%;
   }
   .tagbar>.container {
     padding: 1em;
@@ -651,6 +677,15 @@ template {
   .tagbar .label {
     display: inline-block;
     padding: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-search {
+    display: block;
+    margin: .5em auto;
+    vertical-align: top;
+    width: 30%;
   }
 }
     </style>
