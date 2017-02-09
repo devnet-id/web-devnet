@@ -9,6 +9,8 @@
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/paper-collapse-item/paper-collapse-item.html">
+<link rel="import" href="../bower_components/paper-collapse-item/paper-collapse-group.html">
 <link rel="import" href="my-icons.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="devnet-main">
@@ -20,7 +22,13 @@
       <!-- Drawer content -->
       <app-drawer id="drawer">
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="profile" href="/profile">Profile</a>
+          <a name="main" href="/">Beranda</a>
+          <paper-collapse-item header="For you">
+            <a href="/">Editor's Pick</a> <a href="/">Google Developer ID</a> <a href="/">Frontend Future 2017</a> <a href="/">NodeJS</a> <a href="/">React Native</a>
+          </paper-collapse-item>
+          <a name="event" href="/event">Events</a>
+          <a name="profile" href="/profile">Setting</a>
+          <a name="logout" href="/logout">Logout</a>
         </iron-selector>
       </app-drawer>
       <!-- Main content -->
@@ -44,9 +52,9 @@
             </div>
           </div>
         </app-header>
-        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="view404" role="main">
+        <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="404" role="main">
           <devnet-profile name="profile"></devnet-profile>
-          <my-view404 name="view404"></my-view404>
+          <devnet-404 name="404"></devnet-404>
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
@@ -68,7 +76,7 @@ Polymer({
   ],
 
   _routePageChanged: function(page) {
-    this.page = page || 'view1';
+    this.page = page || 'main';
 
     if (!this.$.drawer.persistent) {
       this.$.drawer.close();
@@ -82,7 +90,7 @@ Polymer({
   },
 
   _showPage404: function() {
-    this.page = 'view404';
+    this.page = '404';
   },
 });
   </script>
