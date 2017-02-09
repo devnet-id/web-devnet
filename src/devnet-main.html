@@ -8,45 +8,38 @@
 <link rel="import" href="../bower_components/app-layout/app-grid/app-grid-style.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="devnet-main">
-    <template>
-        <style include="shared-styles"></style>
-        <style include="app-grid-style">
-        :host {
-            --app-grid-columns: 1;
-        }
-        </style>
-        <app-header-layout>
-            <app-header condenses reveals effects="waterfall">
-                <div class="navbar">
-                    <div class="container">
-                        <a href="/" class="brand">S{}LVE.ID</a>
-                        <form class="navbar-search" action="">
-                            <input type="text">
-                        </form>
-                        <a href="/profile" class="btn">Sign in / Sign up</a>
-                    </div>
-                </div>
-                <div class="tagbar">
-                    <div class="container">
-                        <span class="label">For you</span> <a href="/">Editor's Pick</a> <a href="/">Google Developer ID</a> <a href="/">Frontend Future 2017</a> <a href="/">NodeJS</a> <a href="/">React Native</a>
-                        <a href="/">
-                            <svg class="icon" viewBox="0 0 24 24">
-                                <path fill="#3f51b5" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                <path fill="#fff" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </app-header>
-            <div class="app-grid" has-aspect-ratio>
-                <div>
-                </div>
-            </div>
-        </app-header-layout>
-    </template>
-    <script>
-    Polymer({
-        is: 'devnet-main',
-    });
-    </script>
+  <template>
+    <style include="shared-styles"></style>
+    <style include="app-grid-style">
+:host {
+  --app-grid-columns: 1;
+}
+    </style>
+    <app-header-layout>
+      <app-header condenses reveals effects="waterfall">
+        <div class="navbar">
+          <div class="container"> <a href="/" class="brand">S{}LVE.ID</a>
+            <form class="navbar-search" action="">
+              <input type="text"> </form> <a href="/profile" class="btn">Sign in / Sign up</a> </div>
+        </div>
+        <div class="tagbar">
+          <div class="container"> <span class="label">For you</span> <a href="/">Editor's Pick</a> <a href="/">Google Developer ID</a> <a href="/">Frontend Future 2017</a> <a href="/">NodeJS</a> <a href="/">React Native</a>
+            <a href="/">
+              <svg class="icon" viewBox="0 0 24 24">
+                <path fill="#3f51b5" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
+                <path fill="#fff" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /> </svg>
+            </a>
+          </div>
+        </div>
+      </app-header>
+      <div class="app-grid" has-aspect-ratio>
+        <div> </div>
+      </div>
+    </app-header-layout>
+  </template>
+  <script>
+Polymer({
+  is: 'devnet-main',
+});
+  </script>
 </dom-module>
