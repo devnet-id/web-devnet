@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
@@ -17,6 +18,7 @@
 <link rel="import" href="shared-styles.html">
 <dom-module id="devnet-main">
   <template>
+    <style include="iron-flex iron-flex-alignment"></style>
     <style include="shared-styles"></style>
     <app-location route="{{route}}"></app-location>
     <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
@@ -25,7 +27,8 @@
       <app-drawer id="drawer">
         <app-header class="user-info" style="background-image: url(//images.unsplash.com/photo-1477346611705-65d1883cee1e?dpr=1&auto=compress,format&fit=crop&w=767&h=512&q=80&cs=tinysrgb&crop=);">
           <paper-fab style="background-image: url(//images.unsplash.com/photo-1463453091185-61582044d556?dpr=1&auto=compress,format&fit=crop&w=56&h=56&q=80&cs=tinysrgb&crop=);"></paper-fab>
-          <app-toolbar><h3>Jonathan Aresia</h3></app-toolbar>
+          <app-toolbar>
+            <h3>Jonathan Aresia</h3></app-toolbar>
         </app-header>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="main" href="/">Beranda</a>
@@ -64,6 +67,15 @@
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
+    <div class="container stream">
+      <div class="card content">
+        <h1>Stream</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt, omnis quisquam ipsum a. Reprehenderit quam fugit facere assumenda deleniti expedita magnam, at ad.</p>
+      </div>
+      <div class="sidebar">
+        <a class="card card-event" style="background-image: url(//images.unsplash.com/photo-1461950209984-1ce1f03a1be9?dpr=1&auto=compress,format&fit=crop&w=376&h=376&q=80&cs=tinysrgb&crop=);" href="/"></a>
+      </div>
+    </div>
   </template>
   <script>
 Polymer({

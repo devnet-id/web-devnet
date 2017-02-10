@@ -654,10 +654,6 @@ template {
   line-height: 2;
 }
 
-.tagbar>.container {
-  padding: 0;
-}
-
 .tagbar .label {
   display: block;
   padding: 1em;
@@ -679,11 +675,41 @@ template {
 .card {
   background: #fff;
   border-radius: .4em;
-  margin: 4em auto;
-  padding: 4em;
+  margin: 1em;
+  padding: 2em;
+}
+
+a.card {
+  display: block;
+  padding: 0;
+}
+
+.card-event {
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  min-height: 15em;
+}
+
+.stream {
+  @apply(--layout-vertical);
+  margin-top: 20em;
+}
+
+.sidebar {
+  @apply(--layout-flex);
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
+  .stream {
+    @apply(--layout-horizontal);
+    margin-top: 11em;
+  }
+  .content {
+    margin-right: .5em;
+    width: 50%;
+  }
   .brand {
     font-size: 2em;
     float: left;
@@ -702,7 +728,7 @@ template {
   }
   .tagbar .label {
     display: inline-block;
-    padding: 0;
+    padding: 0 2em 0 1em;
   }
 }
 
@@ -712,6 +738,9 @@ template {
     margin: .5em auto;
     vertical-align: top;
     width: 30%;
+  }
+  .stream {
+    margin-top: 9em;
   }
 }
     </style>
