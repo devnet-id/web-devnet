@@ -625,8 +625,10 @@ template {
 }
 
 .navbar-search {
-  display: none;
-  width: 100%;
+  clear: both;
+  height: 0;
+  margin: 3em 1em -6em;
+  @apply(--layout-horizontal);
 }
 
 .navbar-search input[type=text] {
@@ -634,6 +636,7 @@ template {
   border-radius: .2em;
   box-shadow: 0 .2em .2em rgba(0, 0, 0, 0.35);
   padding: .6em;
+  min-height: 1em;
   width: 100%;
   outline: none;
 }
@@ -694,7 +697,7 @@ a.card {
 
 .stream {
   @apply(--layout-vertical);
-  margin-top: 5em;
+  margin-top: 9em;
 }
 
 .sidebar {
@@ -713,6 +716,9 @@ a.card {
   .brand {
     font-size: 2em;
     float: left;
+  }
+  .navbar-search {
+    margin-top: 6em;
   }
   .navbar .btn {
     display: block;
@@ -737,6 +743,7 @@ a.card {
     display: block;
   }
   .navbar-search {
+    clear: none;
     display: block;
     margin: .5em auto;
     vertical-align: top;
