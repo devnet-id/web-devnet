@@ -644,13 +644,14 @@ template {
   color: #fff;
   display: inline-block;
   float: right;
-  margin: .5em 0;
+  margin: .5em 1em;
   padding: .6em 1em;
   vertical-align: top;
 }
 
 .tagbar {
   background: #fff;
+  display: none;
   line-height: 2;
 }
 
@@ -669,7 +670,7 @@ template {
 }
 
 .tagbar a:last-child {
-  padding: 0;
+  padding: 0 1em 0 0;
 }
 
 .card {
@@ -693,7 +694,7 @@ a.card {
 
 .stream {
   @apply(--layout-vertical);
-  margin-top: 20em;
+  margin-top: 5em;
 }
 
 .sidebar {
@@ -704,7 +705,6 @@ a.card {
 @media (min-width: 768px) {
   .stream {
     @apply(--layout-horizontal);
-    margin-top: 11em;
   }
   .content {
     margin-right: .5em;
@@ -733,6 +733,9 @@ a.card {
 }
 
 @media (min-width: 992px) {
+  .tagbar {
+    display: block;
+  }
   .navbar-search {
     display: block;
     margin: .5em auto;
