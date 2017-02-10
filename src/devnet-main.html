@@ -61,21 +61,28 @@
             </div>
           </div>
         </app-header>
+        <div class="container stream">
+          <div class="card content">
+            <h1>Stream</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt, omnis quisquam ipsum a. Reprehenderit quam fugit facere assumenda deleniti expedita magnam, at ad.</p>
+          </div>
+          <div class="sidebar">
+            <div class="card card-event" style="background-image: url(//images.unsplash.com/photo-1461950209984-1ce1f03a1be9?dpr=1&auto=compress,format&fit=crop&w=376&h=376&q=80&cs=tinysrgb&crop=);" href="/">
+              <small>Upcoming Events</small>
+              <h1>The Next Big Thing in Indonesia</h1>
+              <p>
+                <small><time class="btn" datetime="2017-05-15T19:00">15 Mei 2017</time></small>
+              </p>
+              <a href="/" class="btn">View Events</a>
+            </div>
+          </div>
+        </div>
         <iron-pages selected="[[page]]" attr-for-selected="name" fallback-selection="404" role="main">
           <devnet-profile name="profile"></devnet-profile>
           <devnet-404 name="404"></devnet-404>
         </iron-pages>
       </app-header-layout>
     </app-drawer-layout>
-    <div class="container stream">
-      <div class="card content">
-        <h1>Stream</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, asperiores eaque quibusdam eum quod cum nesciunt, omnis quisquam ipsum a. Reprehenderit quam fugit facere assumenda deleniti expedita magnam, at ad.</p>
-      </div>
-      <div class="sidebar">
-        <a class="card card-event" style="background-image: url(//images.unsplash.com/photo-1461950209984-1ce1f03a1be9?dpr=1&auto=compress,format&fit=crop&w=376&h=376&q=80&cs=tinysrgb&crop=);" href="/"></a>
-      </div>
-    </div>
   </template>
   <script>
 Polymer({
