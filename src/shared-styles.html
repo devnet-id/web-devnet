@@ -627,7 +627,7 @@ template {
 .navbar-search {
   clear: both;
   height: 0;
-  margin: 3em 1em -6em;
+  margin: 3em 0 -6em;
   @apply(--layout-horizontal);
 }
 
@@ -652,7 +652,7 @@ template {
 }
 
 .navbar .btn {
-    float: right;
+  float: right;
 }
 
 .tagbar {
@@ -679,11 +679,51 @@ template {
   padding: 0 1em 0 0;
 }
 
-.card {
+.card,
+.tag {
   background: #fff;
   border-radius: .4em;
-  margin: 1em;
-  padding: 2em;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.tag {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  padding: .5em 1em;
+  margin: 1em .5em .5em 0;
+}
+
+.card .user-info {
+  color: #333;
+  margin-bottom: 1.3em;
+}
+
+.card .user-info paper-fab {
+  margin: 0 1em 1em 0;
+}
+
+.card .user-info h3 {
+  color: #333;
+  padding: .5em 0 .2em;
+}
+
+.card .user-info p {
+  margin: 0;
+}
+
+.card .user-info a {
+  color: #3f51b5;
+}
+
+.entry {
+  background: #fcfcfc;
+  margin: 0 -1em;
+  padding: 1em;
+}
+
+.entry h2 {
+  text-transform: uppercase;
 }
 
 .card-event {
@@ -695,23 +735,27 @@ template {
   min-height: 15em;
 }
 
+.card-event a {
+  color: #fff;
+}
+
 .card-event h1 {
-    margin: 0;
-    text-transform: uppercase;
+  margin: 0;
+  text-transform: uppercase;
 }
 
 .card-event .btn {
-    margin: 0;
-    background: #3f51b5;
-    border-radius: .5em;
+  margin: 0;
+  background: #3f51b5;
+  border-radius: .5em;
 }
 
 .card-event a.btn {
-    display: block;
-    margin-top: 5em;
-    padding: 1em 2em;
-    text-align: center;
-    text-transform: uppercase;
+  display: block;
+  margin-top: 5em;
+  padding: 1em 2em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .stream {
@@ -728,8 +772,8 @@ template {
     @apply(--layout-horizontal);
   }
   .content {
-    margin-right: .5em;
-    width: 50%;
+    margin-right: 2em;
+    width: 70%;
   }
   .brand {
     font-size: 2em;
