@@ -694,8 +694,22 @@ template {
   margin: 1em .5em .5em 0;
 }
 
+.tag-solve {
+  background: #3f51b5;
+  color: #fff;
+}
+
+.tag-unsolve {
+  background: #f46767;
+  color: #fff;
+}
+
+.content .card {
+  overflow: hidden;
+}
+
 .card .user-info {
-  color: #333;
+  color: #898da3;
   margin-bottom: 1.3em;
 }
 
@@ -704,7 +718,7 @@ template {
 }
 
 .card .user-info h3 {
-  color: #333;
+  color: #898da3;
   padding: .5em 0 .2em;
 }
 
@@ -716,13 +730,22 @@ template {
   color: #3f51b5;
 }
 
+.card .btn,
+.card .bookmark {
+  float: right;
+  margin: 0;
+}
+
 .entry {
   background: #fcfcfc;
-  margin: 0 -1em;
+  color: #898da3;
+  margin: 0 -1em 1em;
   padding: 1em;
 }
 
-.entry h2 {
+.entry h2,
+.entry h2 a {
+  color: #333;
   text-transform: uppercase;
 }
 
