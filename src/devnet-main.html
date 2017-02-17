@@ -1,5 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../bower_components/iron-autogrow-textarea/iron-autogrow-textarea.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
 <link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
 <link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
@@ -14,6 +15,8 @@
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/paper-collapse-item/paper-collapse-item.html">
 <link rel="import" href="../bower_components/paper-collapse-item/paper-collapse-group.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
 <link rel="import" href="my-icons.html">
 <link rel="import" href="shared-styles.html">
 <dom-module id="devnet-main">
@@ -63,6 +66,19 @@
         </app-header>
         <div class="container stream">
           <div class="content">
+            <div class="card">
+              <div class="status">
+                <paper-tabs selected="0">
+                  <paper-tab>Post</paper-tab>
+                  <paper-tab>Photos</paper-tab>
+                  <paper-tab>Ask</paper-tab>
+                </paper-tabs>
+                <iron-autogrow-textarea placeholder="What do you think?"></iron-autogrow-textarea>
+              </div>
+              <a href="/" class="btn btn-send">
+                <paper-icon-button icon="send"></paper-icon-button>
+              </a>
+            </div>
             <div class="card">
               <app-header class="user-info">
                 <paper-fab style="background-image: url(//images.unsplash.com/photo-1463453091185-61582044d556?dpr=1&auto=compress,format&fit=crop&w=56&h=56&q=80&cs=tinysrgb&crop=);"></paper-fab>

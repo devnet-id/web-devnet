@@ -19,7 +19,9 @@
     "paper-button": "^1.0.14",
     "paper-input": "^1.1.22",
     "paper-collapse-item": "^1.1.4",
-    "paper-fab": "^1.2.1"
+    "paper-fab": "^1.2.1",
+    "paper-tabs": "^1.8.0",
+    "iron-autogrow-textarea": "^1.0.15"
   },
   "devDependencies": {
     "web-component-tester": "^4.0.0"

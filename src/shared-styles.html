@@ -647,6 +647,9 @@ template {
   padding: .6em 1em;
   vertical-align: top;
 }
+.btn-send {
+    padding: .2em 1.5em;
+}
 
 .navbar .btn {
   float: right;
@@ -778,6 +781,14 @@ template {
   color: #fff;
 }
 
+iron-autogrow-textarea {
+    border: 0;
+    font-size: 2em;
+    margin-top: 1em;
+    min-height: 2em;
+    width: 100%;
+}
+
 .card-event {
   @apply(--layout-vertical);
   background-color: #ccc;
@@ -798,7 +809,7 @@ template {
   text-transform: uppercase;
 }
 
-.card-event .btn {
+.card-event .btn, .btn-send {
   margin: 0;
   background: #3f51b5;
   border-radius: .5em;
